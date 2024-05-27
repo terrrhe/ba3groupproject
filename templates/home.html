@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+{% block title %}
+
+{% endblock %}
+{% block content %}
+
+<style>
+    
+     .answer
+            {
+               background-color: black;
+               color: white;
+               padding: 10px;
+               width: fit-content;
+            }
+
+    .ask
+    {
+        background-color:darkcyan;
+        color: white;
+        padding: 10px;
+        width: fit-content;
+        
+    }
+
+    .askfooter {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+</style>
+<script>
+
+
+    $(document).ready(function () {
+      
+        $('#txtMainFile').on('change', function (e) {
+            uploadFile(e);
+
+        });
+
+         toggleSearch();
+
+    });
+
+
+    function ask()
+    {
+        
+       
+        content = "<div  align='right'><div class='ask'>" + $('#txtAsk').val() + "</div></div>";
+        $('#tblMainContent').append("<tr><td>" + content + "</td></tr>");
+
+        answer();
+        
+        
+                          
+
+    }
+
+    function answer()
+    {
+        toggleSearch();
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function()
+        {
+            if (xhr.readyState == 4)
+            {
+                content = "";
+               
+                content += "<div  align='left'><div class='answer'><span display: inline-block;>" + xhr.responseText + "</span></div></div>";
+                $('#tblMainContent').append("<tr><td>" + content + "</td></tr>");
+
+                withFile = 0;
+                $('#txtFileName').val('');
+
+                toggleSearch();
+              
+            }
+        };
+
+        xhr.open('POST', '/answer', true);
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded ");
+        xhr.send("ask="+ $('#txtAsk').val());
+    }
+
+
+    
+
+    function toggleSearch() {
+        var x = document.getElementById("divProgress");
+
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+        }
+
+
+    }
+
+</script>
+
+    <!-- Page Content goes here -->
+  <div style="height: 100vh;background-color: rgb(189, 213, 227);"> 
+    <table >
+        <tr>
+            <td>
+                <table id="tblMainContent">
+                    <tr>
+                        <td><div align="left" class="answer" >I am able to answer your questions</div></td>
+                    </tr>
+                </table>
+                
+            <td>
+            
+        </tr>
+    
+    
+    </table>
+</div>
+<div class="askfooter">
+    <table>
+        <tr style="background-color:lightgray;">
+            <td> 
+                  <div class="progress" id="divProgress">
+                    <div class="indeterminate"></div>
+                 </div>
+                <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="txtAsk" type="text" class="validate">
+              <!-- <label for="icon_prefix">Type your question here</label>-->
+              </div>
+            </td>
+            <td>
+                <button class="btn waves-effect waves-light" type="submit" name="action" onclick="ask();">
+                    <i class="material-icons right">send</i>
+                  </button>
+            </td>
+            <td style="width: 200px;">
+               
+            </td>
+            
+        </tr>
+    </table>
+   
+</div>
+
+{% endblock %}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!--<script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+                 
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+
+        <style>
+
+            .side-nav li > a {
+              padding: 0 16px;
+            }
+            
+            .side-nav .divider {
+              margin: 0;
+              height: 8px;
+              border-bottom: 1px solid #e0e0e0;
+            
+              background-color: transparent;
+            }
+            
+            .sidenav-header {
+            
+              background: url("{{ url_for('static', filename='uiback.png')}}") no-repeat center center;
+              z-index: -1;
+              background-size: cover;
+              margin-bottom: 0px;
+              padding: 15px 0 0 15px;
+            
+            }
+            .sidenav-header .row {
+              margin-bottom: 0;
+            }
+            
+            .sidenav-footer {
+              margin-bottom: 0px;
+              padding: 0;
+              background-color: white;
+            }
+            .sidenav-footer .row {
+              margin-bottom: 0;
+            }
+            .sidenav-footer .row .social-icons a {
+              opacity: 0.5;
+              padding: 0;
+              text-align: center;
+            }
+            .sidenav-footer .row .social-icons a:hover {
+              background-color: inherit;
+              opacity: 1;
+            }
+
+        
+            .page-footer{
+              background-color: rgba(28, 58, 105, 1)!important;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              
+              text-align: center;
+              
+            }
+
+            .grey.darken-2 
+            {
+              background-color:lightgrey !important;
+            }     
+
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              width:100%;
+              background-color: #f9f9f9;
+              box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+              min-width: 300px;
+              z-index: 1;
+            }
+
+            .nav-wrapper
+            {
+              background-color: white;
+              background-size: cover; 
+
+              
+            }
+
+            .page-header
+            {
+                background-color:rgba(28, 58, 105, 1)!important;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                text-align: left;
+                font-size: 20px;
+                vertical-align: middle;
+                color: white;
+            }
+
+            i
+            {
+              color: black;
+            }
+
+            .field-caption
+            {
+                font-weight: bold;
+                width: 100px;
+            }
+
+            .field-value-short
+            {
+                
+                width: 200px;
+            }
+
+            .collapsible-header
+            {
+              background-color: rgb(130, 188, 235);
+              color:white;
+             }
+
+       
+        </style>
+          
+        <script>
+          window.console = window.console || function(t) {};
+        </script>
+        
+          
+          
+          <script>
+          if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+          }
+        </script>
+
+<!--<script src='https://codepen.io/j_holtslander/pen/pLNzQb.js'></script>-->
+<script>
+
+
+//# sourceURL=pen.js
+</script>
+
+        <style>
+        </style>
+       </head>
+      
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+             
+              
+
+              <a  class="top-left-logo">
+
+          
+              <!--    <img src="{{ url_for('static', filename='fpg-logo.png')}}">-->
+
+              </a>
+
+              <div class="brand-logo center hideOnMobile">
+                <span class="black-text darken-4 Title-text">AI Chat Group Project</span>
+              </div>
+             
+           
+              <!-- menu on right-->
+            
+            </div>
+          </nav>
+          
+         <!-- <ul id="sideMenu" class="sidenav">
+            <li><a href="#!">First Sidebar Link</a></li>
+            <li><a href="#!">Second Sidebar Link</a></li>
+          </ul>-->
+      <!--Side Nav here-->
+       
+        <div class="body-content">
+            {% block content %}
+
+            {% endblock %}
+           
+        </div>
+        <!--<footer class="page-footer">
+          
+    
+          © Powered By NTUC D & T
+           
+              
+        </footer>-->
+    </body>
+</html>
