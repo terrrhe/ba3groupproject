@@ -1,11 +1,10 @@
-#import google.generativeai as palm
-
+import os
 import google.generativeai as genai
 
     
 def answer(ask):
-
-    genai.configure(api_key="AIzaSyDV1E5CltzYfoXoUFMgh8ziYxnFypEO9yc")
+    api_key = os.getenv("MAKERSUITE_API_TOKEN")
+    genai.configure(api_key=api_key)
     
    
    
