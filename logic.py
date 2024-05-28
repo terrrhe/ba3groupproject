@@ -42,15 +42,18 @@ def answer(ask):
                               generation_config=generation_config,
                               safety_settings=safety_settings)
 
-    prompt_parts = [
-  "input: IT Support",
-  "output: The number of IT support is 123455",
-  "input: bank card",
-  "output: call bank hotline 1234",
-  "input: bank address",
-  "output: Tampines",
-  "input: bank in charge",
-  "output: Mr He",
+     prompt_parts = [
+  "input: credit card types",
+"output: 3 types i.e. FirstMilesCard, PrestigeCard, and CashBackCard",
+"input: credit card for miles",
+"output: FirstMilesCard offer 5 miles per dollar spend. Standard Exclusion apply. 3 years expiry for accumulated miles. ",
+"input: credit card for luxury and fine dining experience",
+"output: PrestigeCard offer 1 for 1 in major hotel like Fairmont Market Café, Marriott Wan He Chinese Restaurant. There is also special S$100 dining credit during card member birthday month ",
+"input: credit card for cash back reward",
+"output: CashBackCard provide 1.5% cashback for all transaction with no minimum spend. Standard Exclusion apply.",
+"input: exclusion transaction for miles accumulation or cash back reward",
+"output: Bank finance charges are excluded from miles accumulation or cash back reward.",
+  
   "input: " + ask,
   "output: ",
 ]
