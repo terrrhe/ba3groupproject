@@ -42,7 +42,7 @@ def answer(ask):
                               generation_config=generation_config,
                               safety_settings=safety_settings)
 
-     prompt_parts = [
+    prompt_parts = [
   "input: credit card types",
 "output: 3 types i.e. FirstMilesCard, PrestigeCard, and CashBackCard",
 "input: credit card for miles",
